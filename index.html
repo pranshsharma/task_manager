@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Task Manager</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🎓 Student Task Manager</h1>
+
+    <div class="xp-display">
+      <p>XP: <span id="xp">0</span></p>
+      <div class="progress-bar">
+        <div id="progress-fill" class="fill"></div>
+      </div>
+      <p>Level: <span id="level">0</span></p>
+    </div>
+
+    <div class="task-section">
+      <h2>Tasks</h2>
+      <ul id="task-list"></ul>
+      <input type="text" id="task-input" placeholder="Add new task..." />
+      <button onclick="addTask()">Add Task</button>
+    </div>
+
+    <div class="stats-section">
+      <h2>📊 XP Stats</h2>
+      <canvas id="xpChart" width="400" height="200"></canvas>
+    </div>
+  </div>
+
+  <script src="chart.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
