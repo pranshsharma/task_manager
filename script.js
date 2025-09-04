@@ -1,3 +1,56 @@
+function updateFullCalendar() {
+  const today = new Date();
+  const dayIndex = today.getDay();
+  const month = today.getMonth();
+  const year = today.getFullYear();
+  const currentDate = today.getDate();
+
+  const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+  const months = [
+    "January","February","March","April","May","June",
+    "July","August","September","October","November","December"
+  ];
+
+  document.getElementById("day").textContent = days[dayIndex];
+  document.getElementById("date").textContent = currentDate;
+  document.getElementById("monthYear").textContent = `${months[month]} ${year}`;
+
+  const firstDay = new Date(year, month, 1).getDay();
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+  const calendarBody = document.getElementById("calendar-body");
+  calendarBody.innerHTML = "";
+
+  let date = 1;
+  for (let i = 0; i < 6; i++) {
+    let row = document.createElement("tr");
+
+    for (let j = 0; j < 7; j++) {
+      if (i === 0 && j < firstDay) {
+        let cell = document.createElement("td");
+        row.appendChild(cell);
+      } else if (date > daysInMonth) {
+        break;
+      } else {
+        let cell = document.createElement("td");
+        cell.textContent = date;
+
+        if (date === currentDate) {
+          cell.classList.add("today");
+        }
+
+        row.appendChild(cell);
+        date++;
+      }
+    }
+
+    calendarBody.appendChild(row);
+  }
+}
+
+updateFullCalendar();
+
+setInterval(updateFullCalendar, 1000 * 60 * 60 * 24);
 let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 let xp = Number(localStorage.getItem('xp')) || 0;
 let xpLog = JSON.parse(localStorage.getItem('xpLog')) || {};
