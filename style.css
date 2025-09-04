@@ -1,35 +1,116 @@
-/* Google Fonts (add this in index.html head) */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
-
 body {
-  font-family: 'Inter', sans-serif;
-  background: linear-gradient(135deg, #e0f7fa, #ffffff);
-  margin: 0;
-  padding: 0;
-  color: #333;
+    height: 100vh;
+    background: #f0f2f5;
+    font-family: 'Inter', sans-serif;
+}
+.leftbox{
+    width:400px;
+    height: 80vh;
+    top:20px;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.calendar {
+    background: #fff;
+    padding: 30px;
+    width:300px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+}
+.date-day{
+    background-color:#2e4156d2;
+    width:360px;
+    height:100px;
+    margin-top:-30px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-left: -30px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+.day {
+    margin:10px;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    text-decoration: underline;
+}
+.date {
+    margin:10px;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+}
+.month-year {
+    font-size: 20px;
+    color: #555;
+}
+.calendar header {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.calendar header h2 {
+    margin: 0;
+    margin-top:20px ;
+    font-size: 22px;
+    color: #333;
+}   
+.calendar table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
 }
 
+.calendar th {
+    color: #555;
+    padding: 8px 0;
+}
+
+.calendar td {
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.calendar td:hover {
+    background: #f0f0f0;
+}
+
+.today {
+    background: #007BFF;
+    color: white !important;
+    font-weight: bold;
+}
+.rightbox{
+    margin-top: 100px;
+    width:150vh;
+    height:100vh;
+    margin-left: 400px;
+}
 .container {
-  max-width: 600px;
+  max-width: 100%;
   margin: 30px auto;
   background: #fff;
   padding: 25px 30px;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
-
-h1, h2 {
+h2 {
   text-align: center;
   font-weight: 600;
   margin-bottom: 20px;
   color: #00796b;
 }
-
 .xp-display p {
   margin: 5px 0;
   font-size: 16px;
 }
-
 .progress-bar {
   width: 100%;
   background: #e0e0e0;
@@ -38,7 +119,6 @@ h1, h2 {
   margin: 8px 0 10px;
   overflow: hidden;
 }
-
 .fill {
   height: 100%;
   width: 0%;
@@ -46,12 +126,11 @@ h1, h2 {
   transition: width 0.4s ease;
   border-radius: 10px;
 }
-
 .task-section {
   margin-bottom: 30px;
 }
 
-#task-input {
+input {
   width: 100%;
   padding: 10px;
   font-size: 15px;
@@ -60,7 +139,9 @@ h1, h2 {
   border-radius: 12px;
   outline: none;
 }
-
+input:focus::placeholder{
+    color:transparent;
+}
 button {
   margin-top: 10px;
   background-color: #00796b;
