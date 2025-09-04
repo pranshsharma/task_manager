@@ -1,38 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Student Task Manager</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Time Manager</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>🎓 Student Task Manager</h1>
-
-    <div class="xp-display">
-      <p>XP: <span id="xp">0</span></p>
-      <div class="progress-bar">
-        <div id="progress-fill" class="fill"></div>
-      </div>
-      <p>Level: <span id="level">0</span></p>
+<section class="leftbox">
+    <div class="calendar">
+        <div class="date-day">
+            <div class="day" id="day"></div>
+            <div class="date" id="date"></div>
+        </div>
+        <header>
+            <h2 id="monthYear"></h2>
+        </header>
+        <table>
+        <thead>
+            <tr>
+            <th>Sun</th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>
+            </tr>
+        </thead>
+        <tbody id="calendar-body"></tbody>
+        </table>
     </div>
-
-    <div class="task-section">
-      <h2>Tasks</h2>
-      <ul id="task-list"></ul>
-      <input type="text" id="task-input" placeholder="Add new task..." />
-      <button onclick="addTask()">Add Task</button>
+</section>
+<section class="rightbox">
+    <div class="container">
+        <div class="xp-display">
+            <p>XP: <span id="xp">0</span></p>
+            <div class="progress-bar">
+                <div id="progress-fill" class="fill"></div>
+            </div>
+            <p>Level: <span id="level">0</span></p>
+            <div class="task-section">
+                <h2 class="ph2">Tasks</h2>
+                <ul id="task-list"></ul>
+                <input type="text" id="task-input" placeholder="Add new task..." />
+                <button onclick="addTask()">Add Task</button>
+            </div>
+        </div>
     </div>
-
-    <div class="stats-section">
-      <h2>📊 XP Stats</h2>
-      <canvas id="xpChart" width="400" height="200"></canvas>
-    </div>
-    <p>Desgin And Created By Pransh Sharma</p>
-  </div>
-
-  <script src="chart.min.js"></script>
-  <script src="script.js"></script>
+</section>
+<script src="script.js"></script>
 </body>
 </html>
